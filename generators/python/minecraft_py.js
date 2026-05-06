@@ -710,8 +710,8 @@ Blockly.Python['minecraft_playerHas'] = function(block) {
 Blockly.Python['minecraft_addevent'] = function(block) {
   var dropdown_eventtype = block.getFieldValue('eventType');
   var functionName = Blockly.Python.valueToCode(block, 'functionName', Blockly.Python.ORDER_ATOMIC);
-
-  var code = "vm.onEvent(" + dropdown_eventtype + ", " + functionName + ")\n";
+  var playername = document.getElementById('playernamefield').value;
+  var code = "vm.onEvent(" + dropdown_eventtype + ", " + functionName +", '"+ playername+"')\n";
   return code;
 };	
 
